@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplos PositionDocument</title>
+	<style>
+		code {
+			color: black;
+		}
+		.elem {
+			border-style: solid;
+			border-width: 1px;
+		}
+		.elem-blue {
+			color: blue;
+			border-color: blue;
+		}
+		.elem-red {
+			color: red;
+			border-color: red;
+		}
+		.elem-orange {
+			color: orange;
+			border-color: orange;
+		}
+		.static {
+			position: static;
+		}
+		.relative1 {
+		  	position: relative;
+		  	/*z-index: -1;*/
+		}
+		.relative2 {
+		 	position: relative;
+		 	top: -20px;
+		 	left: 20px;
+		 	width: 500px;
+		 	/*background-color: grey;
+		 	z-index: 1;*/
+		}
+		.fixed {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			width: 500px;
+		}
+		.relative3 {
+		 	position: relative;
+		 	width: 600px;
+		 	height: 400px;
+		}
+		.absolute {
+		 	position: absolute;
+		 	top: 120px;
+		 	right: 0;
+		 	width: 300px;
+		 	height: 200px;
+		}
+		
+	}
+	</style>
+</head>
+<body>
+	<h1>CSS POSITION</h1>
+	
+	<h2>STATIC</h2>
+	<div class="static elem elem-blue">
+	  <p><code>static</code> (estático) es el valor por defecto. Un elemento con <code>position: static;</code> no está posicionado en ninguna forma en específico. Se dice que un elemento static, está <em>no posicionado</em> y un elemento con valor establecido de position está <em>posicionado</em>.</p>
+  	</div>
+	<br><hr>
+
+	<h2>RELATIVE</h2>
+	<div class="relative1 elem elem-blue">
+  		<p><code>relative</code> (relativo) se comporta de la misma manera que <code>static</code> a menos que le agregues otras propiedades.</p>
+	</div>
+  	<div class="relative2 elem elem-red">
+  		<p>Establecer las propiedades <code>top</code>, <code>right</code>, <code>bottom</code>, y <code>left</code> de un elemento con <code>position: relative;</code> causará que su posición normal se reajuste. Otro contenido no se puede ajustar para adaptarse a cualquier hueco dejado por el elemento.</p>
+  	</div>
+	<br><hr>
+
+	<h2>ABSOLUTE</h2>
+	<div class="relative3 elem elem-blue">
+		<p>Este elemento está usando <code>position: relative;</code>. Si estuviera usando <code>position: static;</code> su sucesor con <code>position: asbsolute;</code> escaparía y se posicionaría relativamente al body del documento.</p>
+  		<div class="absolute elem elem-red">
+  			<p>Este elemento tiene <code>position: asbsolute;</code>. Se posiciona de manera relativa a su ancestro.</p>
+	  	</div>
+  	</div>
+  	<br><hr>
+
+	<div class="fixed elem elem-orange">
+		<h2>FIXED</h2>			
+  		<p><code>fixed</code>(fijo) se ajusta de modo relativo al viewport. aunque hagamos scroll no se moverá</p>
+	</div>
+
+  	<div style="height: 400px;"></div>
+	
+
+</body>
+</html>
